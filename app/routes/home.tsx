@@ -74,7 +74,7 @@ function Step1({ onNext }: { onNext: () => void }) {
           </p>
         )}
       </div>
-      <div className="flex items-center gap-4 w-full mt-auto pb-6">
+      <div className="flex items-center gap-4 w-full mt-auto pb-2">
         <button
           onClick={onNext}
           style={{ transform: `scale(${yesScale})` }}
@@ -199,7 +199,7 @@ function Step2({ onNext }: { onNext: () => void }) {
       <button
         onClick={handleVerify}
         disabled={selected.size === 0}
-        className="w-full py-4 bg-violet-500 hover:bg-violet-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold rounded-xl shadow-lg transition-all duration-200 cursor-pointer mt-auto mb-6"
+        className="w-full py-4 bg-violet-500 hover:bg-violet-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-bold rounded-xl shadow-lg transition-all duration-200 cursor-pointer mt-auto mb-2"
       >
         Підтвердити
       </button>
@@ -247,7 +247,7 @@ function Step3({ onNext }: { onNext: () => void }) {
       {done && (
         <button
           onClick={onNext}
-          className="w-full py-4 bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-xl shadow-lg transition-all duration-200 cursor-pointer mt-auto mb-6 animate-fade-in"
+          className="w-full py-4 bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-xl shadow-lg transition-all duration-200 cursor-pointer mt-auto mb-2 animate-fade-in"
         >
           Далі
         </button>
@@ -370,7 +370,7 @@ function Step4({ onNext }: { onNext: () => void }) {
       {allPulled && (
         <button
           onClick={onNext}
-          className="w-full py-4 bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-xl shadow-lg transition-all duration-200 cursor-pointer mt-auto mb-6 animate-fade-in"
+          className="w-full py-4 bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-xl shadow-lg transition-all duration-200 cursor-pointer mt-auto mb-2 animate-fade-in"
         >
           Далі
         </button>
@@ -518,7 +518,7 @@ export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="h-dvh bg-gradient-to-br from-violet-50 via-white to-purple-50 flex flex-col items-center p-6 overflow-hidden">
+    <div className="h-dvh bg-gradient-to-br from-violet-50 via-white to-purple-50 flex flex-col items-center px-6 pt-6 pb-3 overflow-hidden">
       <ProgressBar step={currentStep} />
       <div className="flex-1 flex flex-col w-full max-w-lg min-h-0">
         {currentStep === 1 && (
