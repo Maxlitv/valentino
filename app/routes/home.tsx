@@ -11,7 +11,6 @@ export function meta({}: Route.MetaArgs) {
 const SVETA_IMAGES = [
   "/assets/sveta_one.jpg",
   "/assets/sveta_two.jpg",
-  "/assets/sveta_three.jpg",
   "/assets/sveta_four.jpg",
   "/assets/sveta_five.jpg",
   "/assets/sveta_six.jpg",
@@ -130,7 +129,7 @@ function Step2({ onNext }: { onNext: () => void }) {
     const selectedDecoys = [...selected].filter(
       (k) => !SVETA_IMAGES.includes(k)
     );
-    if (selectedSveta.length === 8 && selectedDecoys.length === 0) {
+    if (selectedSveta.length === 7 && selectedDecoys.length === 0) {
       onNext();
     } else {
       setError(true);
