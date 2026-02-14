@@ -41,10 +41,7 @@ type GridItem =
 
 function ProgressBar({ step }: { step: number }) {
   return (
-    <div className="w-full max-w-md mx-auto mb-8">
-      <div className="flex items-center justify-between mb-2 text-sm text-violet-400 font-medium">
-        {/* <span>Крок {step} з 5</span> */}
-      </div>
+    <div className="w-full max-w-md mx-auto mb-4 shrink-0">
       <div className="flex gap-2">
         {[1, 2, 3, 4, 5].map((s) => (
           <div
@@ -66,7 +63,7 @@ function Step1({ onNext }: { onNext: () => void }) {
   const noScale = Math.max(0.2, 1 - noCount * 0.15);
 
   return (
-    <div className="flex flex-col items-center animate-fade-in flex-1 w-full max-w-md">
+    <div className="flex flex-col items-center animate-fade-in flex-1 min-h-0 w-full max-w-md">
       <div className="flex-1 flex flex-col items-center justify-center gap-8">
         <h1 className="text-3xl md:text-5xl font-bold text-violet-600 text-center leading-tight">
           Ну шо ти, будеш моєю валентинкою? 💝
@@ -141,9 +138,9 @@ function Step2({ onNext }: { onNext: () => void }) {
   };
 
   return (
-    <div className="flex flex-col items-center animate-fade-in flex-1 w-full max-w-lg">
-      <div className="flex-1 flex flex-col items-center justify-center gap-6 w-full">
-        <div className="text-center">
+    <div className="flex flex-col items-center animate-fade-in flex-1 min-h-0 w-full max-w-lg">
+      <div className="flex-1 flex flex-col items-center gap-6 w-full min-h-0 overflow-y-auto py-4">
+        <div className="text-center shrink-0">
           <p className="text-xs uppercase tracking-widest text-violet-300 mb-1">
             Перевірка!
           </p>
@@ -232,7 +229,7 @@ function Step3({ onNext }: { onNext: () => void }) {
   }, []);
 
   return (
-    <div className="flex flex-col items-center animate-fade-in flex-1 w-full max-w-lg">
+    <div className="flex flex-col items-center animate-fade-in flex-1 min-h-0 w-full max-w-lg">
       <div className="flex-1 flex flex-col items-center justify-center gap-8 w-full">
         <span className="text-5xl">💌</span>
         <div className="w-full bg-white/80 backdrop-blur rounded-2xl shadow-xl p-8 border border-violet-100">
@@ -290,8 +287,8 @@ function Step4({ onNext }: { onNext: () => void }) {
   const allPulled = pulled.length === REASONS.length;
 
   return (
-    <div className="flex flex-col items-center animate-fade-in flex-1 w-full max-w-md">
-      <div className="flex-1 flex flex-col items-center justify-center gap-6 w-full">
+    <div className="flex flex-col items-center animate-fade-in flex-1 min-h-0 w-full max-w-md">
+      <div className="flex-1 flex flex-col items-center justify-center gap-6 w-full min-h-0 overflow-y-auto">
         <h2 className="text-2xl md:text-3xl font-bold text-violet-600 text-center">
           Баночка з причинами 🫙
         </h2>
@@ -423,7 +420,7 @@ function Step5() {
   );
 
   return (
-    <div className="flex flex-col items-center animate-fade-in flex-1 w-full max-w-md">
+    <div className="flex flex-col items-center animate-fade-in flex-1 min-h-0 w-full max-w-md">
       {/* Full-screen confetti */}
       {confettiVisible && (
         <div className="fixed inset-0 pointer-events-none z-50 animate-confetti-bg">
@@ -444,7 +441,7 @@ function Step5() {
         </div>
       )}
 
-      <div className="flex-1 flex flex-col items-center justify-center gap-6 w-full">
+      <div className="flex-1 flex flex-col items-center justify-center gap-6 w-full min-h-0 overflow-y-auto">
         <h2 className="text-2xl md:text-3xl font-bold text-violet-600 text-center">
           А тепер подарунок! 🎁
         </h2>
@@ -521,9 +518,9 @@ export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-purple-50 flex flex-col items-center p-6">
+    <div className="h-dvh bg-gradient-to-br from-violet-50 via-white to-purple-50 flex flex-col items-center p-6 overflow-hidden">
       <ProgressBar step={currentStep} />
-      <div className="flex-1 flex flex-col w-full max-w-lg">
+      <div className="flex-1 flex flex-col w-full max-w-lg min-h-0">
         {currentStep === 1 && (
           <Step1 onNext={() => setCurrentStep(2)} />
         )}
